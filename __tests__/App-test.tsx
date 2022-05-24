@@ -1,14 +1,20 @@
-/**
- * @format
- */
+import React from 'react'
+import  { render, RenderAPI } from "@testing-library/react-native"
+import { MainScreen } from '../src/screens/MainScreen'
+import { StackNavigationProp, StackScreenProps } from '@react-navigation/stack'
+import { StackParams } from '../src/navigation/Navigator'
 
-import 'react-native';
-import React from 'react';
-import App from '../App';
+let component: RenderAPI
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+describe("<MainScreen />",  () => {
 
-it('renders correctly', () => {
-  renderer.create(<App />);
-});
+  it("Rendered Correctly", () => {
+
+    const navigation =  {navigate: () => {}}
+    spyOn(navigation, 'navigate')
+    
+    const screen = render(<MainScreen navigation={navigation} />)
+
+  })
+
+})
