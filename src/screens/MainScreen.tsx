@@ -24,6 +24,7 @@ export const MainScreen = ({ navigation }: Props) => {
                     value={input}
                     placeholder="url"
                     keyboardType="default"
+                    testID="txtUrl"
                 />
                 <CustomButton
                     text="Go"
@@ -32,6 +33,7 @@ export const MainScreen = ({ navigation }: Props) => {
                         const body: Url = { url: input }
                         postAliasApi(body)
                     }}
+                    testID="btnShortUrl"
                 />
                 {
                     (loading) ? (
@@ -42,7 +44,7 @@ export const MainScreen = ({ navigation }: Props) => {
             <View style={styles.listContainer}>
                 {
                     (recentAlias.length === 0) ? (
-                        <Text style={{margin:10}}>
+                        <Text style={{margin:10}} testID='txtNothingToShow'>
                             Nothing to show...
                         </Text>
                     ) : (
@@ -62,6 +64,7 @@ export const MainScreen = ({ navigation }: Props) => {
                                     }}
                                 />
                             )}
+                            testID="flHistoryAlias"
                         />
                         </View>
                     )

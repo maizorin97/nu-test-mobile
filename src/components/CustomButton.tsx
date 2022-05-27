@@ -5,16 +5,18 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 interface Props {
     text: string,
     onPress: () => void,
-    disabled: boolean
+    disabled: boolean,
+    testID: string
 }
 
-export const CustomButton = ({text, disabled, onPress}:Props) => {
+export const CustomButton = ({text, disabled, onPress, testID}:Props) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity
                 activeOpacity={0.5}
                 onPress={onPress}
                 disabled={disabled}
+                testID={testID}
             >
                 <View style={styles.buttonBody}>
                     <Text style={styles.text}>{text}</Text>
